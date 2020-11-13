@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function create_data_dir() {
-  fqDirectoryName = "/dir/$1"
+  local fqDirectoryName = "/dir/$1"
   mkdir -p $fqDirectoryName
   chown :docker $fqDirectoryName
 }
