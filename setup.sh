@@ -16,5 +16,6 @@ function create_log_directory() {
 
 create_data_directory portainer
 create_data_directory vernemq
+create_data_directory vernemq/data
 
 create_log_directory vernemq
