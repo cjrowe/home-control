@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  mqtt-broker:
+    container_name: vernemq
+    image: vernemq/vernemq
+    restart: always
+    volumes:
+      - /data/docker-containers/vernemq:/vernemq/data
+      - /var/log/vernemq:/vernemq/log
+    ports:
+      - '1883:1883'
+    expose:
+      - '1883'
+    environment:
+      - DOCKER_VERNEMQ_ACCEPT_EULA=yes
+      - DOCKER_VERNEMQ_ALLOW_ANONYMOUS=on
+
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - ./homeassistant/config:/config
+    environment:
+      - TZ=Europe/London
+    restart: always
+    network_mode: host
