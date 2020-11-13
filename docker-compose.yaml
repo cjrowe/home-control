@@ -11,12 +11,13 @@ services:
 
   portainer:
     container_name: portainer
-    image: portainer/portainer
+    image: portainer/portainer-ce
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /data/portainer:/data
     ports:
+      - '8000:8000'
       - '9000:9000'
     expose:
       - '9000'
@@ -34,7 +35,6 @@ services:
       - '1883'
     environment:
       - DOCKER_VERNEMQ_ACCEPT_EULA=yes
-      - DOCKER_VERNEMQ_ALLOW_ANONYMOUS=on
 
   homeassistant:
     container_name: home-assistant
