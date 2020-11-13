@@ -3,7 +3,8 @@
 function create_data_dir() {
   local fqDirectoryName="/data/$1"
   mkdir -p $fqDirectoryName
-  chown :docker $fqDirectoryName
+  chown nobody:docker $fqDirectoryName
+  chmod 770 $fqDirectoryName
 }
 
 create_data_dir portainer
