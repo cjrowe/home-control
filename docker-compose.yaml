@@ -2,7 +2,7 @@ version: '3.8'
 services:
   reverse-proxy:
     image: traefik:v2.3
-    command: --api.insecure=true --providers.docker
+    command: --api.insecure=true --providers.docker --add-host=host.docker.internal:172.17.0.1
     ports:
       - "80:80"
       - "8080:8080"
@@ -13,6 +13,7 @@ services:
     container_name: portainer
     image: portainer/portainer-ce
     restart: always
+    network_mode: bridge
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /data/portainer:/data
@@ -26,6 +27,7 @@ services:
     container_name: vernemq
     image: vernemq/vernemq
     restart: always
+    network_mode: bridge
     volumes:
       - /data/vernemq/data:/vernemq/data
       - /var/log/vernemq:/vernemq/log
