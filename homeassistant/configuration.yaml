@@ -1,0 +1,71 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Ranskill
+  # Location required to calculate the time the sun rises and sets
+  #### Initial location values for latitude, logitude, elevation, usint_system, and time_zone are calculated from the IP address used when installation occured.  
+  #### Easiest place to get precice info is - http://www.gps-coordinates.net/
+  latitude: 53.387483
+  longitude: -1.010485
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 13
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/London
+
+# Enables the frontend
+#### 99% chance you will never need to disable this.
+#### There are no configuration values within the frontend: component 
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  #### This component controls which port Home Assistant run on, SSL configuration, and other tpc/ip and web server configurations.  We will walk through this in future videos.
+  #### Component definition https://home-assistant.io/components/http/
+  # api_password: PASSWORD
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+#### This component will try to automatically add 11 different uPnP devices.  This includes Chromecast, Wemo Switches, Hue Lights, Netgear routers, Plex, Viera, Roku, Sonos, Yamaha media player, Squeezebox, DirectTV
+#### I have found this to work about 75% of the time, also this can be slow.  I recommend adding the components manually (We will add Sonos, Philips Hue in the next walk-through)
+#discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+#### this is great for seeing usage overtime, and understanding when things might not be working exactly the way you want them to
+##   If you are having resource issues and do not use this function, it is safe to disable.
+history:
+
+# View all events in a logbook
+#### this is great for seeing usage overtime, and understanding when things might not be working exactly the way you want them to.  Similar in a way to history
+logbook:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+# MQTT configuration
+mqtt:
+  broker: 192.168.3.2
+  client_id: homeassistant
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+
+light:
+  platform: hue
+  host: 192.168.3.3
+
+config:
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

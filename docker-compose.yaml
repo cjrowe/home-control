@@ -3,10 +3,14 @@ services:
   reverse-proxy:
     container_name: traefik
     image: traefik:v2.3
-    command: --api.insecure=true --providers.docker --add-host=host.docker.internal:172.17.0.1
+    command: --api.insecure=true --providers.docker
+    network_mode: bridge
     ports:
       - "80:80"
       - "8080:8080"
+    expose:
+      - '80'
+      - '8080'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -21,30 +25,32 @@ services:
     ports:
       - '8000:8000'
       - '9000:9000'
-    expose:
-      - '9000'
+    labels:
+      - traefik.http.routers.portainer.rule=Path("/portainer")
 
   mqtt-broker:
-    container_name: vernemq
-    image: vernemq/vernemq
+    container_name: mosquitto
+    image: eclipse-mosquitto
     restart: always
     network_mode: bridge
     volumes:
-      - /data/vernemq/data:/vernemq/data
-      - /var/log/vernemq:/vernemq/log
+      - /data/mosquitto:/mosquitto/data
+      - /var/log/mosquitto:/mosquitto/log
+      - ./mosquitto:/mosquitto/config
     ports:
       - '1883:1883'
+      - '9001:9001'
     expose:
       - '1883'
-    environment:
-      - DOCKER_VERNEMQ_ACCEPT_EULA=yes
+      - '9001'
 
   homeassistant:
     container_name: home-assistant
     image: homeassistant/home-assistant:stable
     volumes:
-      - ./homeassistant/config:/config
+      - ./homeassistant:/config
     environment:
       - TZ=Europe/London
     restart: always
     network_mode: host
+

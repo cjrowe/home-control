@@ -3,7 +3,7 @@
 function create_data_directory() {
   local fqDirectoryName="/data/$1"
   mkdir -p $fqDirectoryName
-  chown nobody:docker $fqDirectoryName
+  chown :docker $fqDirectoryName
   chmod 770 $fqDirectoryName
 }
 
@@ -15,7 +15,6 @@ function create_log_directory() {
 }
 
 create_data_directory portainer
-create_data_directory vernemq
-create_data_directory vernemq/data
+create_data_directory mosquitto
 
-create_log_directory vernemq
+create_log_directory mosquitto
