@@ -60,6 +60,10 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
 
+# Evohome configuration
+evohome:
+  username: !secret evohome_username
+  password: !secret evohome_password
 
 light:
   platform: hue
