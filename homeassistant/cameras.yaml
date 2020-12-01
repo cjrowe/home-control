@@ -1,0 +1,30 @@
+  - platform: generic
+    name: Driveway/Front Garden
+    still_image_url: !secret camera_front_garden_still
+    stream_source: !secret camera_front_garden_stream
+    verify_ssl: false
+
+  - platform: generic
+    name: Driveway/Garage
+    still_image_url: !secret camera_garage_still
+    stream_source: !secret camera_garage_stream
+    verify_ssl: false
+
+  - platform: generic
+    name: Side Garden
+    still_image_url: !secret camera_side_garden_still
+    stream_source: !secret camera_side_garden_stream
+    verify_ssl: false
+
+  - platform: generic
+    name: Rear Garden
+    still_image_url: !secret camera_rear_garden_still
+    stream_source: !secret camera_rear_garden_stream
+    verify_ssl: false
+
+  - platform: generic
+    name: Rear Patio
+    still_image_url: !secret camera_rear_patio_still
+    stream_source: !secret camera_rear_patio_stream
+    verify_ssl: false
+

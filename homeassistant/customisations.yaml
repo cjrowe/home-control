@@ -1,3 +1,7 @@
   person.chris:
     entity_picture: /local/chris.jpg
 
+  media_player.samsungtv_c19ca11f_cb80_4a51_95aa_65f8bd1a055c:
+    friendly_name: Cinema Screen
+
+
