@@ -1,0 +1,16 @@
+title: Security
+views:
+  - title: Security
+    path: security
+    cards:
+      - type: picture-entity
+        entity: camera.driveway_front_garden
+      - type: picture-entity
+        entity: camera.driveway_garage
+      - type: picture-entity
+        entity: camera.side_garden
+      - type: picture-entity
+        entity: camera.rear_garden
+      - type: picture-entity
+        entity: camera.rear_patio
+

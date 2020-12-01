@@ -1,0 +1,68 @@
+title: Château Rowe
+views:
+  - path: default_view
+    title: Home
+    badges:
+      - entity: binary_sensor.updater
+      - entity: person.eleanor
+      - entity: person.imogen
+      - entity: person.chris
+      - entity: sensor.cinema_room_switch_battery_level
+      - entity: sensor.hue_dimmer_switch_1_battery_level
+      - entity: sun.sun
+    cards:
+      - type: thermostat
+        entity: climate.bathroom
+      - type: thermostat
+        entity: climate.cinema_room
+      - type: thermostat
+        entity: climate.client_room
+      - type: thermostat
+        entity: climate.cloakroom
+      - type: thermostat
+        entity: climate.guest_room
+      - type: thermostat
+        entity: climate.hallway
+      - type: thermostat
+        entity: climate.home
+      - type: thermostat
+        entity: climate.kitchen
+      - type: thermostat
+        entity: climate.landing
+      - type: thermostat
+        entity: climate.lounge
+      - type: thermostat
+        entity: climate.master_bed
+      - type: thermostat
+        entity: climate.nursery
+      - type: thermostat
+        entity: climate.study
+      - type: entities
+        entities:
+          - light.cinema_room
+          - light.cinema_room_light
+          - light.desk_lamp
+          - light.front_door
+          - light.group_for_wakeup
+          - light.hallway
+          - light.kitchen_patio
+          - light.lounge_patio
+          - light.master_bedroom
+          - light.nightlight
+          - light.office
+          - light.office_light
+          - light.outside
+          - light.patio
+          - light.porch_light
+          - light.spotlight
+        title: Light
+      - type: media-control
+        entity: media_player.samsungtv_c19ca11f_cb80_4a51_95aa_65f8bd1a055c
+      - type: entities
+        entities:
+          - water_heater.dhw_controller
+        title: Water Heater
+      - type: weather-forecast
+        entity: weather.home
+        show_forecast: false
+

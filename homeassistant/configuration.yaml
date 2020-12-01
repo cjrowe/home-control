@@ -86,6 +86,15 @@ camera: !include cameras.yaml
 
 config:
 
+lovelace:
+  mode: yaml
+  dashboards:
+    lovelace-generated:
+      mode: yaml
+      title: Security
+      filename: ui-security.yaml
+      icon: mdi:cctv
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
