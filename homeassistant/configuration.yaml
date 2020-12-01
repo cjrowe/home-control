@@ -89,11 +89,16 @@ config:
 lovelace:
   mode: yaml
   dashboards:
-    lovelace-generated:
+    lovelace-security:
       mode: yaml
       title: Security
       filename: ui-security.yaml
       icon: mdi:cctv
+    lovelace-heating:
+      mode: yaml
+      title: Heating
+      filename: ui-heating.yaml
+      icon: mdi:fireplace
 
 group: !include groups.yaml
 automation: !include automations.yaml

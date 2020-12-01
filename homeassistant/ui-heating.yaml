@@ -1,0 +1,39 @@
+title: Heating
+views:
+  - title: Heating
+    path: heating
+    cards:
+      - type: thermostat
+        entity: climate.bathroom
+      - type: thermostat
+        entity: climate.cinema_room
+      - type: thermostat
+        entity: climate.client_room
+      - type: thermostat
+        entity: climate.cloakroom
+      - type: thermostat
+        entity: climate.guest_room
+      - type: thermostat
+        entity: climate.hallway
+      - type: thermostat
+        entity: climate.home
+      - type: thermostat
+        entity: climate.kitchen
+      - type: thermostat
+        entity: climate.landing
+      - type: thermostat
+        entity: climate.lounge
+      - type: thermostat
+        entity: climate.master_bed
+      - type: thermostat
+        entity: climate.nursery
+      - type: thermostat
+        entity: climate.study
+      - type: entities
+        entities:
+          - water_heater.dhw_controller
+        title: Water Heater
+      - type: weather-forecast
+        entity: weather.home
+        show_forecast: true
+
