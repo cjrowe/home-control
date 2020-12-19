@@ -30,9 +30,31 @@ views:
           - light.porch_light
           - light.spotlight
         title: Light
-      - type: media-control
-        entity: media_player.samsungtv_c19ca11f_cb80_4a51_95aa_65f8bd1a055c
       - type: weather-forecast
         entity: weather.home
         show_forecast: false
+
+  - title: Cinema Room
+    path: cinema_room
+    cards:
+      - type: entities
+        entities:
+          - light.cinema_room_light
+          - light.spotlight
+      - type: media-control
+        entity: media_player.samsungtv_c19ca11f_cb80_4a51_95aa_65f8bd1a055c
+
+  - title: Exterior
+    path: exterior
+    cards:
+      - type: picture-entity
+        entity: camera.driveway_front_garden
+      - type: picture-entity
+        entity: camera.driveway_garage
+      - type: picture-entity
+        entity: camera.side_garden
+      - type: picture-entity
+        entity: camera.rear_garden
+      - type: picture-entity
+        entity: camera.rear_patio
 

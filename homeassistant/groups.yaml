@@ -1,8 +1,0 @@
-  cameras:
-    entities:
-      - camera.driveway_front_garden
-      - camera.driveway_garage
-      - camera.side_garden
-      - camera.rear_garden
-      - camera.rear_patio
-
